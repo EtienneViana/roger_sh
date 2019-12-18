@@ -9,7 +9,7 @@ apt-get -y -q install vim
 
 # Create user and add rights
 adduser eviana
-usermod -aG eviana
+usermod -aG sudo eviana
 
 # Get configuration packages on private Github repository
 apt-get -y -q install git
@@ -21,6 +21,7 @@ cp interfaces /etc/network/interfaces
 cp sshd_config /etc/ssh/sshd_config
 
 # Add public_key in eviana's authorized_keys for ssh connexion
+mkdir /home/eviana/.ssh
 cp authorized_keys /home/eviana/.ssh/authorized_keys
 
 # Setting firewall
